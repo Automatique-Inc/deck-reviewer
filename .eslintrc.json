@@ -1,0 +1,46 @@
+{
+  "root": true,
+  "extends": [
+    "next/core-web-vitals"
+  ],
+  "parserOptions": {
+    "tsconfigRootDir": "./",
+    "project": ["./tsconfig.json"]
+  },
+  "rules": {
+    "no-restricted-imports": ["error", {
+      "paths": [{
+        "name": "react-i18next",
+        "importNames": ["Trans"],
+        "message": "Please use imports from `next-i18next` instead of `react-i18next."
+      }]
+    }],
+    "import/no-restricted-paths": [
+      2,
+      {
+        "zones": [
+          {
+            "target": "./src/core",
+            "from": "./src/components"
+          },
+          {
+            "target": "./src/core",
+            "from": "./src/lib"
+          },
+          {
+            "target": "./src/core",
+            "from": "./src/pages"
+          },
+          {
+            "target": "./src/lib",
+            "from": "./src/pages"
+          },
+          {
+            "target": "./src/components",
+            "from": "./src/pages"
+          }
+        ]
+      }
+    ]
+  }
+}
