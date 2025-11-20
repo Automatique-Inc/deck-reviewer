@@ -141,14 +141,20 @@ function Index() {
                   ' from-primary-400 to-primary-700 leading-[1.2]'
                 }
               >
-                Actually Slap?
+                Fuck?
               </span>
             </HeroTitle>
 
             <SubHeading className={'text-center'}>
-              <span>I&apos;ve seen more decks than I&apos;ve had avocados on my private jet toast.</span>
-              <span>Upload yours and I&apos;ll tell you straight: does this thing have potential,</span>
-              <span>or is it just another virgin pitch that&apos;s gonna get laughed out of the term sheet?</span>
+              <span>Listen up, motherfucker. I&apos;m Russ Hanneman. Three commas, doors that go UP not out,</span>
+              <span>the original trespasser who put radio on the goddamn internet and cashed out</span>
+              <span>while you were still circle-jerking in your dorm room.</span>
+              <br />
+              <span>I&apos;ve seen more pitch decks than I&apos;ve had supermodels on my jet,</span>
+              <span>and 99% of them are limp-dick garbage that couldn&apos;t close a screen door in a hurricane.</span>
+              <br />
+              <span>Upload yours. Right now. I&apos;ll tell you in 60 seconds if this thing fucks like a jackhammer</span>
+              <span>or if it&apos;s just another flaccid slide show begging to get ghosted by every VC from Sand Hill to South Park.</span>
             </SubHeading>
 
             <div className={'flex flex-col items-center space-y-4'}>
@@ -165,7 +171,7 @@ function Index() {
               />
 
               <span className={'text-xs text-gray-500 dark:text-gray-400'}>
-                No safe spaces. No participation trophies. Upload your PDF. Get the truth.
+                No lube. No foreplay. Just brutal, ball-slapping truth.
               </span>
             </div>
           </div>
@@ -206,10 +212,10 @@ function Index() {
             <Pill>It&apos;s Not Rocket Science, Richard</Pill>
 
             <div className={'flex flex-col space-y-0.5'}>
-              <Heading type={2}>How This Works</Heading>
+              <Heading type={2}>How This Shit Actually Works</Heading>
 
               <SubHeading as={'h3'}>
-                Three simple steps to find out if your deck has what it takes
+                Three simple steps to find out if your deck fucks or dies alone
               </SubHeading>
             </div>
           </div>
@@ -221,10 +227,10 @@ function Index() {
                   <ArrowUpTrayIcon className={'h-5'} />
                 </FeatureIcon>
 
-                <h4 className={'text-lg font-semibold'}>1. Upload Your Deck</h4>
+                <h4 className={'text-lg font-semibold'}>1. You drop your sad little PDF in the box</h4>
 
                 <div className={'text-gray-500 dark:text-gray-400 text-sm'}>
-                  Drag it in like you&apos;re sneaking into the three comma club. PDF only – none of that PowerPoint nonsense.
+                  Like you&apos;re sliding into a term sheet you don&apos;t deserve.
                 </div>
               </div>
 
@@ -233,10 +239,10 @@ function Index() {
                   <DocumentIcon className={'h-5'} />
                 </FeatureIcon>
 
-                <h4 className={'text-lg font-semibold'}>2. Get It Reviewed</h4>
+                <h4 className={'text-lg font-semibold'}>2. I skull-fuck every slide</h4>
 
                 <div className={'text-gray-500 dark:text-gray-400 text-sm'}>
-                  We&apos;ll tear it apart like a billionaire with a grudge. Market size, traction, team – everything gets scrutinized.
+                  Market size real or just some hopium you pulled out of your ass? Traction look like actual revenue or just another vanity-metric circle jerk? Team slide got winners or a bunch of mouth-breathers who couldn&apos;t sell crack in a rehab?
                 </div>
               </div>
 
@@ -245,10 +251,10 @@ function Index() {
                   <ChevronRightIcon className={'h-5'} />
                 </FeatureIcon>
 
-                <h4 className={'text-lg font-semibold'}>3. Get The Verdict</h4>
+                <h4 className={'text-lg font-semibold'}>3. You get the Russ Verdict</h4>
 
                 <div className={'text-gray-500 dark:text-gray-400 text-sm'}>
-                  Full breakdown, slide-by-slide roasting. What slaps, what needs to go back to the incubator. Zero BS.
+                  This Deck Fucks (rare, I might actually wire money) • This Deck Kinda Fucks But Needs Viagra • This Deck Is A Virgin That Will Die Alone. Full slide-by-slide evisceration. I&apos;ll tell you exactly which page made my dick soft and why your ask is the funniest shit I&apos;ve seen since Pied Piper&apos;s Series B.
                 </div>
               </div>
             </div>
@@ -256,7 +262,7 @@ function Index() {
 
           <div className={'max-w-2xl mx-auto bg-gradient-to-br from-primary/5 to-primary/10 dark:from-primary/10 dark:to-primary/5 border border-primary/20 rounded-2xl p-8'}>
             <p className={'text-center text-base italic text-gray-700 dark:text-gray-300'}>
-              &quot;Look, I&apos;ve funded companies that lose money every quarter. Pinterest? Snapchat? No revenue? That&apos;s hot. But your deck? If it doesn&apos;t make me want to write a check while refreshing my net worth... we&apos;re gonna have problems.&quot;
+              &quot;I&apos;ve funded companies that hemorrhage cash like a hooker with a coke habit and still said &apos;This could be a 10x.&apos; Your deck? If it doesn&apos;t give me a half-chub while I&apos;m sipping Tres Comas tequila on my gull-wing roof… you&apos;re fucked. But not in the good way.&quot;
             </p>
           </div>
         </div>
@@ -270,33 +276,33 @@ function Index() {
                 <Pill>This Guy Reviews</Pill>
 
                 <div className={'flex flex-col'}>
-                  <Heading type={2}>Why Listen To Me?</Heading>
+                  <Heading type={2}>Who The Fuck Am I To Judge Your Deck?</Heading>
 
                   <SubHeading as={'h3'}>
-                    Three commas in the bank. Been there, crushed that.
+                    Three goddamn commas. 1,000,000,000. Say it with me.
                   </SubHeading>
                 </div>
 
                 <div className={'space-y-4'}>
                   <p>
-                    I&apos;m not some polite YC bot. I&apos;ve funded companies that made grown VCs cry... and not in the good way.
+                    I&apos;m not some polite little YC robot that blows smoke up your ass. I will straight-up tell you your revenue model is retarded, your TAM is a fairy tale you tell yourself at night, and your logo looks like it was designed by a blind intern on bath salts.
                   </p>
                   <ul className={'space-y-2 text-gray-600 dark:text-gray-400'}>
                     <li className={'flex items-start space-x-2'}>
                       <ChevronRightIcon className={'h-5 w-5 mt-0.5 text-primary'} />
-                      <span>Put radio on the internet (you&apos;re welcome)</span>
+                      <span>Turned radio into internet money and bounced before the bubble even thought about popping</span>
                     </li>
                     <li className={'flex items-start space-x-2'}>
                       <ChevronRightIcon className={'h-5 w-5 mt-0.5 text-primary'} />
-                      <span>Built companies that actually made it to the three comma club</span>
+                      <span>My doors go up. My bank account goes up. My standards? Through the fucking roof.</span>
                     </li>
                     <li className={'flex items-start space-x-2'}>
                       <ChevronRightIcon className={'h-5 w-5 mt-0.5 text-primary'} />
-                      <span>Seen more decks than most VCs see in a lifetime</span>
+                      <span>I am the guy who decides if you eat ramen or lobster for the next decade</span>
                     </li>
                   </ul>
                   <p className={'text-sm'}>
-                    If your deck slaps, I&apos;ll tell you. If your revenue model is fantasy football, I&apos;ll tell you that too.
+                    But if your deck fucks? Holy shit. I&apos;ll scream it from my suicide doors while shotgunning champagne off a supermodel&apos;s ass.
                   </p>
                 </div>
 
@@ -324,34 +330,34 @@ function Index() {
 
           <div className={'flex flex-col space-y-8 items-center'}>
             <div className={'flex flex-col items-center space-y-2 text-center'}>
-              <Heading type={2}>Real Reviews (Kind Of)</Heading>
-              <SubHeading>What happens when decks meet brutal honesty</SubHeading>
+              <Heading type={2}>Sample Russ Reviews</Heading>
+              <SubHeading>Real ones coming soon</SubHeading>
             </div>
 
             <div className={'grid gap-8 lg:grid-cols-3 w-full'}>
               <div className={'flex flex-col space-y-3 p-6 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-xl border border-green-200 dark:border-green-800'}>
                 <div className={'flex items-center justify-between'}>
-                  <span className={'text-sm font-semibold text-green-700 dark:text-green-400'}>SLAPS</span>
+                  <span className={'text-sm font-semibold text-green-700 dark:text-green-400'}>THIS FUCKS</span>
                   <span className={'text-2xl'}>💰</span>
                 </div>
                 <p className={'text-sm italic text-gray-700 dark:text-gray-300'}>
-                  &quot;This deck slaps so hard I almost joined the four comma club.&quot;
+                  &quot;Motherfucker… this deck just impregnated my portfolio.&quot;
                 </p>
                 <p className={'text-xs text-gray-500 dark:text-gray-400'}>
-                  — On a Series A that raised $50M
+                  — On a deck that actually fucks
                 </p>
               </div>
 
               <div className={'flex flex-col space-y-3 p-6 bg-gradient-to-br from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-800/20 rounded-xl border border-red-200 dark:border-red-800'}>
                 <div className={'flex items-center justify-between'}>
-                  <span className={'text-sm font-semibold text-red-700 dark:text-red-400'}>DOES NOT SLAP</span>
+                  <span className={'text-sm font-semibold text-red-700 dark:text-red-400'}>DOES NOT FUCK</span>
                   <span className={'text-2xl'}>🚪</span>
                 </div>
                 <p className={'text-sm italic text-gray-700 dark:text-gray-300'}>
-                  &quot;These are not the slides of a billionaire.&quot;
+                  &quot;I&apos;ve seen hookers with more realistic projections.&quot;
                 </p>
                 <p className={'text-xs text-gray-500 dark:text-gray-400'}>
-                  — On a deck with Comic Sans
+                  — On a deck with fantasy financials
                 </p>
               </div>
 
@@ -361,10 +367,10 @@ function Index() {
                   <span className={'text-2xl'}>🔥</span>
                 </div>
                 <p className={'text-sm italic text-gray-700 dark:text-gray-300'}>
-                  &quot;Now that&apos;s what I&apos;m talking about.&quot;
+                  &quot;This is the first deck in months that didn&apos;t make me want to jump off my gull-wing roof.&quot;
                 </p>
                 <p className={'text-xs text-gray-500 dark:text-gray-400'}>
-                  — Happens about 1% of the time
+                  — High praise from Russ
                 </p>
               </div>
             </div>
@@ -400,10 +406,10 @@ function Index() {
 
           <div className={'max-w-2xl text-center'}>
             <p className={'text-lg font-medium text-gray-700 dark:text-gray-300'}>
-              Stop sending virgin decks to investors.
+              Stop sending flaccid, blue-ball decks to investors.
             </p>
             <p className={'text-base text-gray-600 dark:text-gray-400 mt-2'}>
-              Upload now or forever hold your L.
+              Make that shit hard. Make it close. Upload your deck right fucking now… or keep wondering why every term sheet says &quot;pass harder than Russ Hanneman on a bad pitch.&quot;
             </p>
           </div>
         </div>
@@ -514,7 +520,7 @@ function MainCallToActionButton({
       disabled={uploading}
     >
       <span className={'flex items-center space-x-2'}>
-        <span>{uploading ? 'Uploading...' : 'Show Me If Your Deck Slaps'}</span>
+        <span>{uploading ? 'Uploading...' : 'Show Me Your Deck, Bitch'}</span>
         <ArrowUpTrayIcon
           className={
             'h-4 animate-in fade-in slide-in-from-left-8' +
