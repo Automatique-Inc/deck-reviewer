@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { GetStaticPropsContext } from 'next';
+import { useState, useRef } from 'react';
 
 import {
   BuildingLibraryIcon,
@@ -9,6 +10,7 @@ import {
   UserGroupIcon,
   UserIcon,
   ChevronRightIcon,
+  ArrowUpTrayIcon,
 } from '@heroicons/react/24/outline';
 
 import Container from '~/core/ui/Container';
@@ -21,10 +23,78 @@ import SiteHeader from '~/components/SiteHeader';
 import { withTranslationProps } from '~/lib/props/with-translation-props';
 import Footer from '~/components/Footer';
 import PricingTable from '~/components/PricingTable';
+import { Toaster } from 'sonner';
 
 function Index() {
+  const [uploading, setUploading] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleUploadClick = () => {
+    fileInputRef.current?.click();
+  };
+
+  const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    if (file.type !== 'application/pdf') {
+      alert('Please upload a PDF file');
+      return;
+    }
+
+    setUploading(true);
+
+    try {
+      // Dynamic import to avoid loading Firebase on the server
+      const { getStorage, ref, uploadBytes } = await import('firebase/storage');
+      const { initializeApp, getApps } = await import('firebase/app');
+      const configuration = (await import('~/configuration')).default;
+
+      // Initialize Firebase if not already initialized
+      let app;
+      if (getApps().length === 0) {
+        app = initializeApp({
+          apiKey: configuration.firebase.apiKey,
+          authDomain: configuration.firebase.authDomain,
+          projectId: configuration.firebase.projectId,
+          storageBucket: configuration.firebase.storageBucket,
+          messagingSenderId: configuration.firebase.messagingSenderId,
+          appId: configuration.firebase.appId,
+        });
+      } else {
+        app = getApps()[0];
+      }
+
+      const storage = getStorage(app);
+      const timestamp = Date.now();
+      const fileName = `decks/${timestamp}-${file.name}`;
+      const storageRef = ref(storage, fileName);
+
+      await uploadBytes(storageRef, file);
+
+      // Show success toast
+      const { toast } = await import('sonner');
+      toast.success('Deck uploaded successfully!', {
+        description: 'We\'ll analyze your pitch deck and get back to you soon.',
+      });
+
+      // Reset file input
+      if (fileInputRef.current) {
+        fileInputRef.current.value = '';
+      }
+    } catch (error) {
+      console.error('Upload error:', error);
+      const { toast } = await import('sonner');
+      toast.error('Upload failed', {
+        description: 'Please try again or contact support if the issue persists.',
+      });
+    } finally {
+      setUploading(false);
+    }
+  };
   return (
     <Layout>
+      <Toaster position="top-center" />
       <SiteHeader />
 
       <Container>
@@ -37,32 +107,42 @@ function Index() {
         >
           <div className={'flex w-full flex-1 flex-col items-center space-y-8'}>
             <Pill>
-              <span>The leading SaaS Starter Kit for ambitious developers</span>
+              <span>Silicon Valley&apos;s Most Brutally Honest Deck Reviewer</span>
             </Pill>
 
             <HeroTitle>
-              <span>The SaaS Solution for</span>
+              <span>Will Your Deck</span>
               <span
                 className={
                   'bg-gradient-to-br bg-clip-text text-transparent' +
                   ' from-primary-400 to-primary-700 leading-[1.2]'
                 }
               >
-                developers and founders
+                Close Deals or Just Doors?
               </span>
             </HeroTitle>
 
             <SubHeading className={'text-center'}>
-              <span>Here you can write a short description of your SaaS</span>
-              <span>This subheading is usually laid out on multiple lines</span>
-              <span>Impress your customers, straight to the point.</span>
+              <span>Get real, unfiltered feedback on your pitch deck.</span>
+              <span>Upload your deck and find out if it actually slaps,</span>
+              <span>or if you need to go back to the drawing board.</span>
             </SubHeading>
 
             <div className={'flex flex-col items-center space-y-4'}>
-              <MainCallToActionButton />
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept="application/pdf"
+                onChange={handleFileChange}
+                className="hidden"
+              />
+              <MainCallToActionButton
+                onClick={handleUploadClick}
+                uploading={uploading}
+              />
 
               <span className={'text-xs text-gray-500 dark:text-gray-400'}>
-                Free plan. No credit card required.
+                Upload your PDF. Get honest feedback. No BS.
               </span>
             </div>
           </div>
@@ -388,7 +468,13 @@ function RightFeatureContainer(props: React.PropsWithChildren) {
   return <div className={'flex w-full lg:w-6/12'}>{props.children}</div>;
 }
 
-function MainCallToActionButton() {
+function MainCallToActionButton({
+  onClick,
+  uploading,
+}: {
+  onClick: () => void;
+  uploading: boolean;
+}) {
   return (
     <Button
       className={
@@ -399,11 +485,12 @@ function MainCallToActionButton() {
       variant={'custom'}
       size={'lg'}
       round
-      href={'/auth/sign-up'}
+      onClick={onClick}
+      disabled={uploading}
     >
       <span className={'flex items-center space-x-2'}>
-        <span>Get Started</span>
-        <ChevronRightIcon
+        <span>{uploading ? 'Uploading...' : 'Upload Your Deck'}</span>
+        <ArrowUpTrayIcon
           className={
             'h-4 animate-in fade-in slide-in-from-left-8' +
             ' delay-1000 fill-mode-both duration-1000 zoom-in'
