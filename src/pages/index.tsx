@@ -107,25 +107,25 @@ function Index() {
         >
           <div className={'flex w-full flex-1 flex-col items-center space-y-8'}>
             <Pill>
-              <span>Silicon Valley&apos;s Most Brutally Honest Deck Reviewer</span>
+              <span>Three Commas. Radio on the Internet. Zero BS.</span>
             </Pill>
 
             <HeroTitle>
-              <span>Will Your Deck</span>
+              <span>Does Your Deck</span>
               <span
                 className={
                   'bg-gradient-to-br bg-clip-text text-transparent' +
                   ' from-primary-400 to-primary-700 leading-[1.2]'
                 }
               >
-                Close Deals or Just Doors?
+                Actually Slap?
               </span>
             </HeroTitle>
 
             <SubHeading className={'text-center'}>
-              <span>Get real, unfiltered feedback on your pitch deck.</span>
-              <span>Upload your deck and find out if it actually slaps,</span>
-              <span>or if you need to go back to the drawing board.</span>
+              <span>I&apos;ve seen more decks than I&apos;ve had avocados on my private jet toast.</span>
+              <span>Upload yours and I&apos;ll tell you straight: does this thing have potential,</span>
+              <span>or is it just another virgin pitch that&apos;s gonna get laughed out of the term sheet?</span>
             </SubHeading>
 
             <div className={'flex flex-col items-center space-y-4'}>
@@ -142,7 +142,7 @@ function Index() {
               />
 
               <span className={'text-xs text-gray-500 dark:text-gray-400'}>
-                Upload your PDF. Get honest feedback. No BS.
+                No safe spaces. No participation trophies. Upload your PDF. Get the truth.
               </span>
             </div>
           </div>
@@ -180,13 +180,13 @@ function Index() {
               'flex max-w-3xl flex-col items-center space-y-6 text-center'
             }
           >
-            <Pill>A modern, scalable, and secure SaaS Starter Kit</Pill>
+            <Pill>It&apos;s Not Rocket Science, Richard</Pill>
 
             <div className={'flex flex-col space-y-0.5'}>
-              <Heading type={2}>The best tool in the space</Heading>
+              <Heading type={2}>How This Works</Heading>
 
               <SubHeading as={'h3'}>
-                Unbeatable Features and Benefits for Your SaaS Business
+                Three simple steps to find out if your deck has what it takes
               </SubHeading>
             </div>
           </div>
@@ -195,62 +195,13 @@ function Index() {
             <div className={'grid gap-12 lg:grid-cols-3'}>
               <div className={'flex flex-col space-y-2'}>
                 <FeatureIcon>
-                  <UserIcon className={'h-5'} />
+                  <ArrowUpTrayIcon className={'h-5'} />
                 </FeatureIcon>
 
-                <h4 className={'text-lg font-semibold'}>Authentication</h4>
+                <h4 className={'text-lg font-semibold'}>1. Upload Your Deck</h4>
 
                 <div className={'text-gray-500 dark:text-gray-400 text-sm'}>
-                  Secure and Easy-to-Use Authentication for Your SaaS Website
-                </div>
-              </div>
-
-              <div className={'flex flex-col space-y-2'}>
-                <FeatureIcon>
-                  <BuildingLibraryIcon className={'h-5'} />
-                </FeatureIcon>
-
-                <h4 className={'text-lg font-semibold'}>Multi-Tenancy</h4>
-
-                <div className={'text-gray-500 dark:text-gray-400 text-sm'}>
-                  Powerful Multi-Tenancy Features for Maximum Flexibility and
-                  Efficiency
-                </div>
-              </div>
-
-              <div className={'flex flex-col space-y-2'}>
-                <FeatureIcon>
-                  <UserGroupIcon className={'h-5'} />
-                </FeatureIcon>
-
-                <h4 className={'text-lg font-semibold'}>Team-Management</h4>
-
-                <div className={'text-gray-500 dark:text-gray-400 text-sm'}>
-                  Effortlessly Manage and Organize Your Team Members
-                </div>
-              </div>
-
-              <div className={'flex flex-col space-y-2'}>
-                <FeatureIcon>
-                  <PaintBrushIcon className={'h-5'} />
-                </FeatureIcon>
-
-                <h4 className={'text-lg font-semibold'}>UI Themes</h4>
-
-                <div className={'text-gray-500 dark:text-gray-400 text-sm'}>
-                  Customizable UI Themes to Match Your Brand and Style
-                </div>
-              </div>
-
-              <div className={'flex flex-col space-y-2'}>
-                <FeatureIcon>
-                  <CubeIcon className={'h-5'} />
-                </FeatureIcon>
-
-                <h4 className={'text-lg font-semibold'}>UI Components</h4>
-
-                <div className={'text-gray-500 dark:text-gray-400 text-sm'}>
-                  Pre-built UI Components to Speed Up Your Development
+                  Drag it in like you&apos;re sneaking into the three comma club. PDF only – none of that PowerPoint nonsense.
                 </div>
               </div>
 
@@ -259,38 +210,71 @@ function Index() {
                   <DocumentIcon className={'h-5'} />
                 </FeatureIcon>
 
-                <h4 className={'text-lg font-semibold'}>
-                  Blog and Documentation
-                </h4>
+                <h4 className={'text-lg font-semibold'}>2. Get It Reviewed</h4>
 
                 <div className={'text-gray-500 dark:text-gray-400 text-sm'}>
-                  Pre-built Blog and Documentation Pages to Help Your Users
+                  We&apos;ll tear it apart like a billionaire with a grudge. Market size, traction, team – everything gets scrutinized.
+                </div>
+              </div>
+
+              <div className={'flex flex-col space-y-2'}>
+                <FeatureIcon>
+                  <ChevronRightIcon className={'h-5'} />
+                </FeatureIcon>
+
+                <h4 className={'text-lg font-semibold'}>3. Get The Verdict</h4>
+
+                <div className={'text-gray-500 dark:text-gray-400 text-sm'}>
+                  Full breakdown, slide-by-slide roasting. What slaps, what needs to go back to the incubator. Zero BS.
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className={'max-w-2xl mx-auto bg-gradient-to-br from-primary/5 to-primary/10 dark:from-primary/10 dark:to-primary/5 border border-primary/20 rounded-2xl p-8'}>
+            <p className={'text-center text-base italic text-gray-700 dark:text-gray-300'}>
+              &quot;Look, I&apos;ve funded companies that lose money every quarter. Pinterest? Snapchat? No revenue? That&apos;s hot. But your deck? If it doesn&apos;t make me want to write a check while refreshing my net worth... we&apos;re gonna have problems.&quot;
+            </p>
           </div>
         </div>
       </Container>
 
       <Container>
-        <div className={'flex flex-col space-y-4'}>
+        <div className={'flex flex-col space-y-16 py-16'}>
           <FeatureShowcaseContainer>
             <LeftFeatureContainer>
               <div className={'flex flex-col space-y-4'}>
+                <Pill>This Guy Reviews</Pill>
+
                 <div className={'flex flex-col'}>
-                  <Heading type={2}>Authentication</Heading>
+                  <Heading type={2}>Why Listen To Me?</Heading>
 
                   <SubHeading as={'h3'}>
-                    Secure and Easy-to-Use Authentication for Your SaaS Website
-                    and API
+                    Three commas in the bank. Been there, crushed that.
                   </SubHeading>
                 </div>
 
-                <div>
-                  Our authentication system is built on top of the
-                  industry-leading PaaS such as Supabase and Firebase. It is
-                  secure, easy-to-use, and fully customizable. It supports
-                  email/password, social logins, and more.
+                <div className={'space-y-4'}>
+                  <p>
+                    I&apos;m not some polite YC bot. I&apos;ve funded companies that made grown VCs cry... and not in the good way.
+                  </p>
+                  <ul className={'space-y-2 text-gray-600 dark:text-gray-400'}>
+                    <li className={'flex items-start space-x-2'}>
+                      <ChevronRightIcon className={'h-5 w-5 mt-0.5 text-primary'} />
+                      <span>Put radio on the internet (you&apos;re welcome)</span>
+                    </li>
+                    <li className={'flex items-start space-x-2'}>
+                      <ChevronRightIcon className={'h-5 w-5 mt-0.5 text-primary'} />
+                      <span>Built companies that actually made it to the three comma club</span>
+                    </li>
+                    <li className={'flex items-start space-x-2'}>
+                      <ChevronRightIcon className={'h-5 w-5 mt-0.5 text-primary'} />
+                      <span>Seen more decks than most VCs see in a lifetime</span>
+                    </li>
+                  </ul>
+                  <p className={'text-sm'}>
+                    If your deck slaps, I&apos;ll tell you. If your revenue model is fantasy football, I&apos;ll tell you that too.
+                  </p>
                 </div>
 
                 <div>
@@ -307,52 +291,61 @@ function Index() {
             <RightFeatureContainer>
               <Image
                 className="rounded-2xl"
-                src={'/assets/images/sign-in.webp'}
-                width={'626'}
-                height={'683'}
-                alt={'Sign In'}
-              />
-            </RightFeatureContainer>
-          </FeatureShowcaseContainer>
-
-          <FeatureShowcaseContainer>
-            <LeftFeatureContainer>
-              <Image
-                className="rounded-2xl"
-                src={'/assets/images/dashboard.webp'}
+                src={'/assets/images/dashboard-dark.webp'}
                 width={'887'}
                 height={'743'}
                 alt={'Dashboard'}
               />
-            </LeftFeatureContainer>
-
-            <RightFeatureContainer>
-              <div className={'flex flex-col space-y-4'}>
-                <div className={'flex flex-col'}>
-                  <Heading type={2}>Dashboard</Heading>
-
-                  <SubHeading>
-                    A fantastic dashboard to manage your SaaS business
-                  </SubHeading>
-                </div>
-
-                <div>
-                  Our dashboard offers an overview of your SaaS business. It
-                  shows at a glance all you need to know about your business. It
-                  is fully customizable and extendable.
-                </div>
-
-                <div>
-                  <Button round variant={'outline'} href={'/auth/sign-up'}>
-                    <span className={'flex space-x-2 items-center'}>
-                      <span>Get Started</span>
-                      <ChevronRightIcon className={'h-3'} />
-                    </span>
-                  </Button>
-                </div>
-              </div>
             </RightFeatureContainer>
           </FeatureShowcaseContainer>
+
+          <div className={'flex flex-col space-y-8 items-center'}>
+            <div className={'flex flex-col items-center space-y-2 text-center'}>
+              <Heading type={2}>Real Reviews (Kind Of)</Heading>
+              <SubHeading>What happens when decks meet brutal honesty</SubHeading>
+            </div>
+
+            <div className={'grid gap-8 lg:grid-cols-3 w-full'}>
+              <div className={'flex flex-col space-y-3 p-6 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-xl border border-green-200 dark:border-green-800'}>
+                <div className={'flex items-center justify-between'}>
+                  <span className={'text-sm font-semibold text-green-700 dark:text-green-400'}>SLAPS</span>
+                  <span className={'text-2xl'}>💰</span>
+                </div>
+                <p className={'text-sm italic text-gray-700 dark:text-gray-300'}>
+                  &quot;This deck slaps so hard I almost joined the four comma club.&quot;
+                </p>
+                <p className={'text-xs text-gray-500 dark:text-gray-400'}>
+                  — On a Series A that raised $50M
+                </p>
+              </div>
+
+              <div className={'flex flex-col space-y-3 p-6 bg-gradient-to-br from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-800/20 rounded-xl border border-red-200 dark:border-red-800'}>
+                <div className={'flex items-center justify-between'}>
+                  <span className={'text-sm font-semibold text-red-700 dark:text-red-400'}>DOES NOT SLAP</span>
+                  <span className={'text-2xl'}>🚪</span>
+                </div>
+                <p className={'text-sm italic text-gray-700 dark:text-gray-300'}>
+                  &quot;These are not the slides of a billionaire.&quot;
+                </p>
+                <p className={'text-xs text-gray-500 dark:text-gray-400'}>
+                  — On a deck with Comic Sans
+                </p>
+              </div>
+
+              <div className={'flex flex-col space-y-3 p-6 bg-gradient-to-br from-yellow-50 to-yellow-100 dark:from-yellow-900/20 dark:to-yellow-800/20 rounded-xl border border-yellow-200 dark:border-yellow-800'}>
+                <div className={'flex items-center justify-between'}>
+                  <span className={'text-sm font-semibold text-yellow-700 dark:text-yellow-400'}>RARE PRAISE</span>
+                  <span className={'text-2xl'}>🔥</span>
+                </div>
+                <p className={'text-sm italic text-gray-700 dark:text-gray-300'}>
+                  &quot;Now that&apos;s what I&apos;m talking about.&quot;
+                </p>
+                <p className={'text-xs text-gray-500 dark:text-gray-400'}>
+                  — Happens about 1% of the time
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </Container>
 
@@ -364,22 +357,31 @@ function Index() {
         >
           <div className={'flex flex-col items-center space-y-8 text-center'}>
             <Pill>
-              Get started for free. No credit card required. Cancel anytime.
+              Try before you invest. No doors will be slammed (yet).
             </Pill>
 
             <div className={'flex flex-col space-y-2.5'}>
               <Heading type={1}>
-                Ready to take your SaaS business to the next level?
+                Ready to Join the Three Comma Club?
               </Heading>
 
               <SubHeading>
-                Get started on our free plan and upgrade when you are ready.
+                Start with our free plan. Upgrade when you&apos;re ready to make your deck actually slap.
               </SubHeading>
             </div>
           </div>
 
           <div className={'w-full'}>
             <PricingTable />
+          </div>
+
+          <div className={'max-w-2xl text-center'}>
+            <p className={'text-lg font-medium text-gray-700 dark:text-gray-300'}>
+              Stop sending virgin decks to investors.
+            </p>
+            <p className={'text-base text-gray-600 dark:text-gray-400 mt-2'}>
+              Upload now or forever hold your L.
+            </p>
           </div>
         </div>
       </Container>
@@ -489,7 +491,7 @@ function MainCallToActionButton({
       disabled={uploading}
     >
       <span className={'flex items-center space-x-2'}>
-        <span>{uploading ? 'Uploading...' : 'Upload Your Deck'}</span>
+        <span>{uploading ? 'Uploading...' : 'Show Me If Your Deck Slaps'}</span>
         <ArrowUpTrayIcon
           className={
             'h-4 animate-in fade-in slide-in-from-left-8' +
