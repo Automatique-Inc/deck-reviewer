@@ -13,6 +13,17 @@ service firebase.storage {
         return resource.contentType.matches('image/.*')
     }
 
+    function isPDF(resource) {
+        return resource.contentType == 'application/pdf'
+    }
+
+    // Allow anyone to upload PDFs to the decks/ directory
+    // For production, you may want to add authentication or rate limiting
+    match /decks/{fileName} {
+      allow read: if true;
+      allow create: if isPDF(request.resource) && request.resource.size < 50 * 1024 * 1024; // Max 50MB
+    }
+
     match /organizations/{organizationId}/{fileName=**} {
       allow read: if getUserId() in getOrganization(organizationId).data.members;
       allow create: if getUserId() in getOrganization(organizationId).data

@@ -46,7 +46,7 @@ function Index() {
 
     try {
       // Dynamic import to avoid loading Firebase on the server
-      const { getStorage, ref, uploadBytes } = await import('firebase/storage');
+      const { getStorage, ref, uploadBytes, connectStorageEmulator } = await import('firebase/storage');
       const { initializeApp, getApps } = await import('firebase/app');
       const configuration = (await import('~/configuration')).default;
 
@@ -66,11 +66,34 @@ function Index() {
       }
 
       const storage = getStorage(app);
+
+      // Connect to emulator if in development
+      // Note: connectStorageEmulator can only be called once per storage instance
+      if (configuration.emulator) {
+        try {
+          const emulatorHost = configuration.emulatorHost ?? 'localhost';
+          connectStorageEmulator(storage, emulatorHost, 9199);
+        } catch (error) {
+          // Ignore error if already connected to emulator
+          if (!(error instanceof Error && error.message.includes('already'))) {
+            throw error;
+          }
+        }
+      }
+
       const timestamp = Date.now();
       const fileName = `decks/${timestamp}-${file.name}`;
       const storageRef = ref(storage, fileName);
 
       await uploadBytes(storageRef, file);
+
+      console.log('✅ File uploaded successfully:', {
+        fileName: file.name,
+        fileSize: `${(file.size / 1024 / 1024).toFixed(2)} MB`,
+        fileType: file.type,
+        storagePath: fileName,
+        timestamp: new Date(timestamp).toISOString(),
+      });
 
       // Show success toast
       const { toast } = await import('sonner');

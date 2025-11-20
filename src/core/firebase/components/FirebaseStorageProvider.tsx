@@ -10,7 +10,10 @@ export default function FirebaseStorageProvider({
 }: React.PropsWithChildren<{ useEmulator?: boolean }>) {
   const app = useFirebaseApp();
   const emulator = useEmulator ?? configuration.emulator;
-  const bucketUrl = configuration.firebase.storageBucket;
+
+  // When using emulator, don't specify bucket URL
+  // Otherwise, use the configured bucket
+  const bucketUrl = emulator ? undefined : configuration.firebase.storageBucket;
   const sdk = getStorage(app, bucketUrl);
 
   useEffect(() => {
