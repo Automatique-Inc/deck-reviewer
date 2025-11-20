@@ -140,7 +140,7 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
     );
 
   const organization = await getCurrentOrganization(user.uid);
-  const { onboarded } = user.customClaims;
+  const onboarded = user.customClaims?.onboarded;
 
   if (onboarded && organization) {
     return redirectToAppHome(ctx.locale);
