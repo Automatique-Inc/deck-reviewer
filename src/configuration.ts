@@ -9,12 +9,12 @@ enum Themes {
 
 const configuration = {
   site: {
-    name: 'Awesomely - Your SaaS Title',
-    description: 'Your SaaS Description',
+    name: 'DeckCheck - Brutally Honest Pitch Deck Reviews',
+    description: 'Get real feedback on your pitch deck. Find out if your deck will close deals or just doors.',
     themeColor: '#ffffff',
     themeColorDark: '#0a0a0a',
     siteUrl: process.env.NEXT_PUBLIC_SITE_URL as string,
-    siteName: 'Awesomely',
+    siteName: 'DeckCheck',
     twitterHandle: '',
     githubHandle: '',
     convertKitFormId: '',
