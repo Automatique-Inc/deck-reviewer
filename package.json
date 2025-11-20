@@ -13,6 +13,9 @@
   "scripts": {
     "analyze": "ANALYZE=true npm run build",
     "dev": "next dev",
+    "dev:all": "concurrently -n \"FIREBASE,APP,SCHEDULER\" -c \"yellow,cyan,magenta\" \"npm run firebase:emulators\" \"npm run dev\" \"npm run dev:scheduler\"",
+    "dev:scheduler": "sh ./scripts/start-scheduler-when-ready.sh",
+    "firebase:emulators": "firebase emulators:start --project demo-makerkit",
     "build": "next build",
     "build:test": "NODE_ENV=test next build",
     "dev:test": "NODE_ENV=test next dev",
@@ -88,6 +91,7 @@
     "@types/react": "18.3.5",
     "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.2",
+    "concurrently": "^9.2.1",
     "cypress": "13.14.2",
     "dotenv": "^16.4.5",
     "eslint": "^8.57.0",
