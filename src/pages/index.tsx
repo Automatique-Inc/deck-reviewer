@@ -47,7 +47,9 @@ function Index() {
     try {
       // Dynamic import to avoid loading Firebase on the server
       const { getStorage, ref, uploadBytes, connectStorageEmulator } = await import('firebase/storage');
+      const { getFirestore, collection, addDoc, serverTimestamp, connectFirestoreEmulator } = await import('firebase/firestore');
       const { initializeApp, getApps } = await import('firebase/app');
+      const { useRouter } = await import('next/router');
       const configuration = (await import('~/configuration')).default;
 
       // Initialize Firebase if not already initialized
@@ -66,15 +68,16 @@ function Index() {
       }
 
       const storage = getStorage(app);
+      const firestore = getFirestore(app);
 
-      // Connect to emulator if in development
-      // Note: connectStorageEmulator can only be called once per storage instance
+      // Connect to emulators if in development
       if (configuration.emulator) {
         try {
           const emulatorHost = configuration.emulatorHost ?? 'localhost';
           connectStorageEmulator(storage, emulatorHost, 9199);
+          connectFirestoreEmulator(firestore, emulatorHost, 8080);
         } catch (error) {
-          // Ignore error if already connected to emulator
+          // Ignore error if already connected to emulators
           if (!(error instanceof Error && error.message.includes('already'))) {
             throw error;
           }
@@ -87,24 +90,41 @@ function Index() {
 
       await uploadBytes(storageRef, file);
 
-      console.log('✅ File uploaded successfully:', {
+      console.log('✅ File uploaded to storage:', {
         fileName: file.name,
-        fileSize: `${(file.size / 1024 / 1024).toFixed(2)} MB`,
+        storagePath: fileName,
+      });
+
+      // Create deck document in Firestore
+      const deckRef = await addDoc(collection(firestore, 'decks'), {
+        fileName: file.name,
+        fileSize: file.size,
         fileType: file.type,
         storagePath: fileName,
-        timestamp: new Date(timestamp).toISOString(),
+        uploadedAt: serverTimestamp(),
+        status: 'uploaded',
+        pageCount: 0,
+        uploadedBy: null, // anonymous upload
+      });
+
+      console.log('✅ Deck document created:', {
+        deckId: deckRef.id,
       });
 
       // Show success toast
       const { toast } = await import('sonner');
       toast.success('Deck uploaded successfully!', {
-        description: 'We\'ll analyze your pitch deck and get back to you soon.',
+        description: 'Redirecting to analysis page...',
       });
 
-      // Reset file input
-      if (fileInputRef.current) {
-        fileInputRef.current.value = '';
-      }
+      // Redirect to deck detail page
+      const router = (await import('next/router')).default.useRouter ?
+        window.location : null;
+
+      // Use window.location for redirect (simpler than router hook)
+      setTimeout(() => {
+        window.location.href = `/decks/${deckRef.id}`;
+      }, 1000);
     } catch (error) {
       console.error('Upload error:', error);
       const { toast } = await import('sonner');
